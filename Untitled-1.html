@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portal</title>
+    <style>
+        body{
+            font-family: Arial;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        /* LOGIN PAGE */
+        .login-container{
+            width: 350px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 80px auto;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .login-container h2{
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-container input{
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #999;
+            border-radius: 8px;
+        }
+        .login-container button{
+            width: 95%;
+            padding: 12px;
+            background: #2575fc;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover{
+            background: #1a5dcc;
+        }
+
+        /* PORTAL HIDDEN INITIALLY */
+        #portal{
+            display: none;
+        }
+
+        /* Header */
+        .header{
+            background: #6a11cb;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav{
+            background: #222;
+            overflow: hidden;
+        }
+        .nav a{
+            float: left;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover{
+            background: #444;
+        }
+
+        /* Content Box */
+        .box{
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        th{
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="login-container">
+    <h2>Student Login</h2>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- PORTAL CONTENT -->
+<div id="portal">
+    <div class="header">Student Portal</div>
+
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Results</a>
+        <a href="#">Profile</a>
+    </div>
+
+    <div class="box">
+        <h2>Welcome, Student!</h2>
+        <p>This is your colorful updated student portal.</p>
+    </div>
+
+    <div class="box">
+        <h3>Your Courses</h3>
+        <table>
+            <tr>
+                <th>Course</th>
+                <th>Faculty</th>
+            </tr>
+            <tr>
+                <td>Data Structures</td>
+                <td>Dr. Sharma</td>
+            </tr>
+            <tr>
+                <td>DBMS</td>
+                <td>Prof. Reddy</td>
+            </tr>
+            <tr>
+                <td>Computer Networks</td>
+                <td>Dr. Rao</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box">
+        <h3>Your Results</h3>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td>DS</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>DBMS</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>CN</td>
+                <td>82</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    function login() {
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+
+        if(user === "" || pass === ""){
+            alert("Please enter username and password");
+        } else {
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("portal").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
